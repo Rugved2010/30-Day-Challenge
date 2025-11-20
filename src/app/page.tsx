@@ -3,6 +3,8 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Flame, Trophy, Zap, Target, Calendar, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
+
 
 export default function LandingPage() {
   const timelineSteps = [
@@ -38,14 +40,16 @@ export default function LandingPage() {
                 30-DAY CHALLENGE
               </span>
             </motion.div>
-            <motion.button
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-2 rounded-full border-2 border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-all font-bold"
-            >
-              Sign In
-            </motion.button>
+            <Link href="/login">
+              <motion.button
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                whileHover={{ scale: 1.05 }}
+                className="px-6 py-2 rounded-full border-2 border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-all font-bold"
+              >
+                Sign In
+              </motion.button>
+            </Link>
           </nav>
         </header>
 
@@ -89,14 +93,16 @@ export default function LandingPage() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group px-10 py-5 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full text-xl font-bold shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/80 transition-all inline-flex items-center gap-3"
-              >
-                START YOUR CHALLENGE
-                <ArrowRight className="group-hover:translate-x-2 transition-transform" size={24} />
-              </motion.button>
+              <Link href="/signup">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group px-10 py-5 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full text-xl font-black shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/80 transition-all inline-flex items-center gap-3"
+                >
+                  START YOUR CHALLENGE
+                  <ArrowRight className="group-hover:translate-x-2 transition-transform" size={24} />
+                </motion.button>
+              </Link>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="px-10 py-5 rounded-full border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 transition-all font-bold"
@@ -229,14 +235,16 @@ export default function LandingPage() {
               </div>
 
               <div className="text-center">
-                <p className="text-cyan-400 font-bold text-lg mb-6">+ Add your own habits</p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-10 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-bold text-lg shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/80 transition-all"
-                >
-                  BEGIN YOUR TRANSFORMATION
-                </motion.button>
+                <p className="text-cyan-400 font-bold text-lg mb-6">+ Add your own custom habits</p>
+                <Link href="/signup">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-10 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-black text-lg shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/80 transition-all"
+                  >
+                    BEGIN YOUR TRANSFORMATION
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -259,13 +267,15 @@ export default function LandingPage() {
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
               Join thousands who've already taken control. Your future self is waiting.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-6 bg-gradient-to-r from-orange-500 via-purple-600 to-cyan-500 rounded-full text-2xl font-bold shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/80 transition-all"
-            >
-              START NOW →
-            </motion.button>
+            <Link href="/signup">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-12 py-6 bg-gradient-to-r from-orange-500 via-purple-600 to-cyan-500 rounded-full text-2xl font-bold shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/80 transition-all"
+              >
+                START NOW →
+              </motion.button>
+            </Link>
           </motion.div>
         </section>
 
